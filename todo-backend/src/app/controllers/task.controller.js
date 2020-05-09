@@ -12,13 +12,6 @@ exports.get = async (req, res) => {
   } catch (error) {
     return res.status(400).send({ error: "Error loading tasks" });
   }
-
-  // Task.find().then(documents => {
-  //   res.status(200).json({
-  //     message: "List Tasks",
-  //     response: documents,
-  //   });
-  // });
 };
 
 exports.post = async (req, res) => {
@@ -35,19 +28,6 @@ exports.post = async (req, res) => {
   } catch (error) {
     return res.status(400).send({ error: "Error create task" });
   }
-
-  // const task = new Task({
-  //   task: req.body.task,
-  //   status: req.body.status,
-  //   project: req.body.project,
-  // });
-
-  // task.save().then(created => {
-  //   res.status(201).json({
-  //     message: "Create Task",
-  //     response: created._id,
-  //   });
-  // });
 };
 
 exports.getById = async (req, res) => {
