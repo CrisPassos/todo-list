@@ -58,7 +58,7 @@ exports.patch = async (req, res) => {
 
 exports.delete = async (req, res) => {
   try {
-    await Project.findAndDelete({ user: req.userId, id: req.params.id });
+    await Project.findOneAndDelete({ user: req.userId, _id: req.params.id });
 
     res.status(200).json({ message: "Project deleted" });
   } catch (error) {
