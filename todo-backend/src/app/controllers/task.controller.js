@@ -70,17 +70,12 @@ exports.patch = async (req, res) => {
 
 exports.delete = async (req, res) => {
   try {
-    await Task.findAndDelete({ user: req.userId, id: req.params.id });
+    const task = await Task.findByIdAndDelete(req.params.id);
+
+    if (!task) res.status(404).send("Task not found");
 
     res.status(200).json({ message: "Task deleted" });
   } catch (error) {
     return res.status(400).send({ error: "Error delete task" });
   }
-  // try {
-  //   const task = Task.findByIdAndDelete(req.params.id);
-  //   if (!task) res.status(404).send("Task not found");
-  //   res.send(200).json({ message: "Project deleted" });
-  // } catch (err) {
-  //   res.status(500).send(err);
-  // }
 };

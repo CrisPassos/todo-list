@@ -5,7 +5,7 @@ const task = new Schema({
   task: { type: String, required: true },
   done: { type: Boolean, default: false, required: true },
   createdDate: { type: Date, default: Date.now, required: true },
-  finishDate: { type: Date, required: true },
+  finishDate: { type: Date },
   user: { type: mongoose.Schema.Types.ObjectId, ref: "User", require: true },
   project: {
     type: mongoose.Schema.Types.ObjectId,
