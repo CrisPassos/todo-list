@@ -19,7 +19,4 @@ schema.pre("save", async function(next) {
   next();
 });
 
-//descobrir o que faz isso
-schema.set("toJSON", { virtuals: true });
-
 module.exports = mongoose.model("User", schema);

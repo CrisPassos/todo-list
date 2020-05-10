@@ -8,6 +8,4 @@ const project = new Schema({
   tasks: [{ type: mongoose.Schema.Types.ObjectId, ref: "Task" }],
 });
 
-project.set("toJSON", { virtuals: true });
-
 module.exports = mongoose.model("Project", project);

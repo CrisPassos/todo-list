@@ -23,7 +23,7 @@ exports.post = async (req, res) => {
 
     return res.status(201).json({
       message: "Create Task",
-      project: task,
+      task: task,
     });
   } catch (error) {
     return res.status(400).send({ error: "Error create task" });
@@ -56,16 +56,6 @@ exports.patch = async (req, res) => {
   } catch (error) {
     return res.status(400).send({ error: "Error update task" });
   }
-  // try {
-  //   const task = Task.findByIdAndUpdate(req.params.id, req.body);
-  //   Task.save();
-  //   res.status(201).json({
-  //     message: "Update added successfully",
-  //     response: task,
-  //   });
-  // } catch (err) {
-  //   res.status(500).send(err);
-  // }
 };
 
 exports.delete = async (req, res) => {
