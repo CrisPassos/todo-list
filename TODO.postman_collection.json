@@ -1,0 +1,351 @@
+{
+	"info": {
+		"_postman_id": "1fab52f8-7ded-41bf-b4a4-a3762d542bf2",
+		"name": "TODO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Efraim\",\n\t\"email\": \"efraim@email.com\",\n\t\"password\": \"cris123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"cristiana@email.com\",\n\t\"password\": \"cris123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/user/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Project - Create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlYjQyZDA4ODk2NmZhNjEzYTQyNmNkNSIsImlhdCI6MTU4OTA1MjAwNCwiZXhwIjoxNTg5MTM4NDA0fQ.sJE72C3tkSEuH3v4RmVfWLhVPS75RwhelCH5yH95t9s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"projectName\":\"More One\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/project",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"project"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Project - List By User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlYjQyZDA4ODk2NmZhNjEzYTQyNmNkNSIsImlhdCI6MTU4OTA1MjAwNCwiZXhwIjoxNTg5MTM4NDA0fQ.sJE72C3tkSEuH3v4RmVfWLhVPS75RwhelCH5yH95t9s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/project",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"project"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Project - Find By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlYjQyZDA4ODk2NmZhNjEzYTQyNmNkNSIsImlhdCI6MTU4OTA1MjAwNCwiZXhwIjoxNTg5MTM4NDA0fQ.sJE72C3tkSEuH3v4RmVfWLhVPS75RwhelCH5yH95t9s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/project/5eb7d54115bb890e2e571300",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"project",
+						"5eb7d54115bb890e2e571300"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Project - Delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlYjQyZDA4ODk2NmZhNjEzYTQyNmNkNSIsImlhdCI6MTU4OTA1MjAwNCwiZXhwIjoxNTg5MTM4NDA0fQ.sJE72C3tkSEuH3v4RmVfWLhVPS75RwhelCH5yH95t9s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/project/5eb7d54115bb890e2e571300",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"project",
+						"5eb7d54115bb890e2e571300"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Project - Update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlYjQyZDA4ODk2NmZhNjEzYTQyNmNkNSIsImlhdCI6MTU4OTA1MjAwNCwiZXhwIjoxNTg5MTM4NDA0fQ.sJE72C3tkSEuH3v4RmVfWLhVPS75RwhelCH5yH95t9s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"projectName\":\"New Projeto Editadoaadasdasd\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/project/5eb5b5609fcd27c6143cd015",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"project",
+						"5eb5b5609fcd27c6143cd015"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Task - Create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlYjQyZDA4ODk2NmZhNjEzYTQyNmNkNSIsImlhdCI6MTU4OTA1MjAwNCwiZXhwIjoxNTg5MTM4NDA0fQ.sJE72C3tkSEuH3v4RmVfWLhVPS75RwhelCH5yH95t9s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":null,\"task\":\"Task 1\",\"done\":false,\"project\":\"5eb7e8b715bb890e2e571315\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/task",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Task - Find By ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlYjQyZDA4ODk2NmZhNjEzYTQyNmNkNSIsImlhdCI6MTU4OTA1MjAwNCwiZXhwIjoxNTg5MTM4NDA0fQ.sJE72C3tkSEuH3v4RmVfWLhVPS75RwhelCH5yH95t9s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/task/5eb7e8f215bb890e2e571318",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"task",
+						"5eb7e8f215bb890e2e571318"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Task - Update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlYjQyZDA4ODk2NmZhNjEzYTQyNmNkNSIsImlhdCI6MTU4OTA1MjAwNCwiZXhwIjoxNTg5MTM4NDA0fQ.sJE72C3tkSEuH3v4RmVfWLhVPS75RwhelCH5yH95t9s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":\"5eb7e8f215bb890e2e571318\",\"task\":\"Task 1 - Edito\",\"done\":false,\"project\":\"5eb7e8b715bb890e2e571315\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "Request URL: http://localhost:3000/api/task/5eb7e8f215bb890e2e571318\n",
+					"protocol": "Request URL: http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"task",
+						"5eb7e8f215bb890e2e571318\n"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
