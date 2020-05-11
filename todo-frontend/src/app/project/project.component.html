@@ -1,0 +1,14 @@
+<mat-card class="card-width">
+  <h2 *ngIf="!project">Create a new project</h2>
+  <h2 *ngIf="project">Update a new project</h2>
+  <mat-divider></mat-divider><br>
+  <form (submit)="onSubmit(postForm)" #postForm="ngForm">
+    <mat-form-field class="width-full">
+      <input matInput placeholder="Name" name="projectName" [value]="project?.projectName" value ngModel required
+        #projectName="ngModel">
+    </mat-form-field>
+    <button mat-button mat-icon-button class="button">
+      <mat-icon>save</mat-icon>
+    </button>
+  </form>
+</mat-card>

@@ -1,0 +1,36 @@
+<h2 class="center-align"> ToDo Project </h2>
+
+
+<mat-card class="center-align card-width card-align">
+  <h3 class="center-align"> Sign In </h3>
+  <form (submit)="onSubmit(userForm)" class="form" #userForm="ngForm">
+    <mat-form-field class="full-width">
+      <mat-label>Name</mat-label>
+      <input matInput name="username" ngModel required #username="ngModel">
+      <mat-error *ngIf="username.invalid">Please enter with a name</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput [formControl]="email" [errorStateMatcher]="matcher">
+      <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="email.hasError('required')">
+        Please enter with a email
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width">
+      <mat-label>Password</mat-label>
+      <input matInput [type]="'password'" name="password" ngModel required #password="ngModel">
+      <mat-error *ngIf="password.invalid">Please enter with a password</mat-error>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" class="width-full button">Create Account</button>
+
+  </form>
+  <br>
+  <div class="center-align">Or</div>
+  <br>
+  <button mat-raised-button (click)="login()"><i class="material-icons">logout</i> Login</button>

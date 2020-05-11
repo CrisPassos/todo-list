@@ -1,0 +1,52 @@
+<mat-card class="card-width">
+  <mat-card-title>
+    <label>{{ project.projectName }}</label>
+    <mat-icon aria-hidden="false" aria-label="Edit" class="icon" (click)="onEditProject(project)">edit</mat-icon>
+    <mat-icon aria-hidden="false" aria-label="Remove" class="icon" (click)="onDeleteProject(project.id)">delete
+    </mat-icon>
+  </mat-card-title>
+
+  <mat-card-content>
+    <mat-divider></mat-divider> <br>
+    <label>TO DO</label>
+    <ul>
+      <li *ngFor="let item of taskList">
+        <mat-checkbox *ngIf="!item.done" (click)="updateStatus(item.id, { done: true})">
+          {{item.task}}
+        </mat-checkbox>
+        <mat-icon aria-hidden="false" *ngIf="!item.done" aria-label="Edit" class="icon" (click)="onEdit(item.id)">
+          edit</mat-icon>
+
+        <mat-icon aria-hidden="false" *ngIf="!item.done" aria-label="Remove" class="icon" (click)="onDelete(item.id)">
+          delete</mat-icon>
+
+
+      </li>
+    </ul>
+    <label>DONE</label>
+    <ul>
+      <li *ngFor="let item of taskList">
+        <mat-checkbox disabled *ngIf="item.done">
+          {{item.task}} {{item.finishDate | date:'shortDate'}}
+        </mat-checkbox>
+      </li>
+    </ul>
+    <mat-divider></mat-divider>
+  </mat-card-content>
+
+  <mat-card-footer class="margin-footer">
+    <br>
+    <form (submit)="onSubmit(taskForm)" #taskForm="ngForm">
+      <mat-form-field class="width-full">
+        <input matInput placeholder="Task" name="task" [value]="taskEdit?.task" ngModel required #task="ngModel">
+        <mat-error *ngIf="task.invalid">Please enter a project name</mat-error>
+      </mat-form-field>
+      <div class="height-button">
+        <button mat-button mat-icon-button class="button">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+    </form>
+  </mat-card-footer>
+
+</mat-card>

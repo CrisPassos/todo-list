@@ -1,0 +1,36 @@
+<h2 class="center-align"> ToDo Project </h2>
+<mat-card class="center-align card-width card-align">
+  <form (submit)="onSubmit(userForm)" class="form" #userForm="ngForm">
+    <mat-form-field class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput [formControl]="email" [errorStateMatcher]="matcher">
+      <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="email.hasError('required')">
+        Please enter with a email
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width">
+      <mat-label>Password</mat-label>
+      <input matInput [type]="'password'" name="password" ngModel required #password="ngModel">
+      <mat-error *ngIf="password.invalid">Please enter with a password</mat-error>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" class="width-full button">Login</button>
+
+  </form>
+  <br>
+  <div class="center-align">Or</div>
+  <br>
+  <button mat-raised-button (click)="createAccount()"><i class="material-icons">email</i> Create
+    Account</button>
+
+  <!-- <button mat-icon-button disabled aria-label="Sign in with facebook">
+      <mat-icon>fa fa-facebook</mat-icon>
+    </button>
+
+    <button mat-icon-button disabled aria-label="Sign in with Gmail">
+      <mat-icon>google</mat-icon>
+    </button> -->

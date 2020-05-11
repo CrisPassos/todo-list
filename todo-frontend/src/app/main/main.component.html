@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+  <span>EDirectInsure TODO List</span>
+  <span class="spacer"></span>
+  <button mat-button mat-icon-button (click)="logout()">
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>
+
+<div class="container">
+  <div>
+    <app-project [project]="projectEdit"></app-project>
+  </div>
+
+  <div>
+    <div *ngFor="let item of projects">
+      <app-task [project]="item" [task]="item.tasks" (projectEdit)="edit($event)"></app-task>
+    </div>
+  </div>
+</div>
